@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
- 
-import Map from 'App/Components/Map/'
+import Main from 'App/Components/Main/'
 
 class App extends Component {
     
     render() {
-        return <Map />;
+        return <Main />;
     }
 }
 

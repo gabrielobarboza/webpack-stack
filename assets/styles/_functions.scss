@@ -1,5 +1,20 @@
 // function & mixins
 
+@mixin bgGradient($color1: white, $color2: black, $angle: 90) {
+    background: $color1;
+    background: -moz-linear-gradient(#{$angle}deg, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient(#{$angle}deg, $color1 0%, $color2 100%);
+    background: linear-gradient(#{$angle}deg, $color1 0%, $color2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$color1, endColorstr=$color2, GradientType=1);
+}
+
+@mixin animation($name) {
+    @-webkit-keyframes #{$name} {@content};
+    @-moz-keyframes #{$name} {@content};
+    @-o-keyframes #{$name} {@content};
+    @keyframes #{$name} {@content};
+}
+
 // Remove unit from value
 @function strip-units($number) {
     @return $number / ($number * 0 + 1);

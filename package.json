@@ -1,8 +1,8 @@
 {
-  "name": "lol-path-desk",
+  "name": "webpack-stack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App/src/index.js",
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --open --mode development --progress --colors --inline --hot --history-api-fallback",

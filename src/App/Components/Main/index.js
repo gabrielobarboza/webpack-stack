@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { setScreen } from 'App/Reducers/Screen/screenActions';
 
-class Map extends Component {
+class Main extends Component {
     constructor(props) {
         super(props);
         this.updateDimensions = this.updateDimensions.bind(this);
@@ -30,7 +30,7 @@ class Map extends Component {
     
     render() {
         return (
-            <div id="Map" hidden={!this.props.screen.landscape}>
+            <div id="Main" hidden={!this.props.screen.landscape}>
                 <div className="wrapper">
                     <div className="overlay"></div>
                     <Canvas /> 
@@ -43,5 +43,5 @@ class Map extends Component {
 const StateToProps = state => ({ ...state })
 const DispatchToProps = dispatch => 
     bindActionCreators({ setScreen }, dispatch)
-export default connect(StateToProps, DispatchToProps)(Map)
+export default connect(StateToProps, DispatchToProps)(Main)
 
