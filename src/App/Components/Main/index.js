@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Canvas from './Canvas'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -12,6 +11,7 @@ class Main extends Component {
     }
 
     componentWillMount() {
+        console.log(this.props.screen)
         window.addEventListener("resize", this.updateDimensions, false);        
     }
 
@@ -33,7 +33,6 @@ class Main extends Component {
             <div id="Main" hidden={!this.props.screen.landscape}>
                 <div className="wrapper">
                     <div className="overlay"></div>
-                    <Canvas /> 
                 </div>
             </div>
         )
