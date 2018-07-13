@@ -1,0 +1,111 @@
+// font-faces/imports
+
+// Roboto
+@font-face {
+    font-family: 'Roboto';
+    src:url('/assets/fonts/Roboto-Medium.woff') format('woff'),
+        url('/assets/fonts/Roboto-Medium.svg#Roboto-Medium') format('svg'),
+        url('/assets/fonts/Roboto-Medium.eot'),
+        url('/assets/fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:url('/assets/fonts/Roboto-Light.woff') format('woff'),
+        url('/assets/fonts/Roboto-Light.svg#Roboto-Light') format('svg'),
+        url('/assets/fonts/Roboto-Light.eot'),
+        url('/assets/fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'); 
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:url('/assets/fonts/Roboto-Bold.woff') format('woff'),
+        url('/assets/fonts/Roboto-Bold.svg#Roboto-BoldItalic') format('svg'),
+        url('/assets/fonts/Roboto-Bold.eot'),
+        url('/assets/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:url('/assets/fonts/Roboto-Medium.woff') format('woff'),
+        url('/assets/fonts/Roboto-Medium.svg#Roboto-MediumItalic') format('svg'),
+        url('/assets/fonts/Roboto-Medium.eot'),
+        url('/assets/fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:url('/assets/fonts/Roboto-Light.woff') format('woff'),
+        url('/assets/fonts/Roboto-Light.svg#Roboto-LightItalic') format('svg'),
+        url('/assets/fonts/Roboto-Light.eot'),
+        url('/assets/fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'); 
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:url('/assets/fonts/Roboto-Bold.woff') format('woff'),
+        url('/assets/fonts/Roboto-Bold.svg#Roboto-BoldItalic') format('svg'),
+        url('/assets/fonts/Roboto-Bold.eot'),
+        url('/assets/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: 700;
+    font-style: italic;
+}
+
+// OPTI_Tripple
+
+@font-face {
+    font-family: 'OPTITriplett';
+    src:url('/assets/fonts/OPTITriplettLight.woff') format('woff'),
+        url('/assets/fonts/OPTITriplettLight.svg#OPTITriplettLight') format('svg'),
+        url('/assets/fonts/OPTITriplettLight.eot'),
+        url('/assets/fonts/OPTITriplettLight.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OPTITriplett';
+    src:url('/assets/fonts/OPTITriplettBold.woff') format('woff'),
+        url('/assets/fonts/OPTITriplettBold.svg#OPTITriplettBoldItalic') format('svg'),
+        url('/assets/fonts/OPTITriplettBold.eot'),
+        url('/assets/fonts/OPTITriplettBold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+// reset fonts properties
+body,
+html {
+	@include media(mobile) {
+		font-size: (1600 / strip-units($phone)) + vw;
+	}
+	@include media(tablet, portrait) {
+		font-size: (1600 / strip-units($mobile)) + vw;
+	}
+	@include media(tablet, landscape) {
+		font-size: (1600 / strip-units($desktop)) + vw;
+	}
+	@include media(desktop) {
+		font-size: (1600 / strip-units($layout)) + vw;
+	}
+}
+
+* {
+    font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.005);
+}
+

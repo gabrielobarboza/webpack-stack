@@ -1,0 +1,40 @@
+// function & mixins
+
+// Remove unit from value
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+// Convert PX to REM
+@function rem($number) {
+    $number: strip-units($number);
+    $number: $number / 16;
+    @return #{$number}rem;
+}
+
+@mixin media($device, $orientation: ''){
+	// mobile sets
+	@if $device == mobile {
+		@if ($orientation == landscape) or ($orientation == portrait) {
+			@media only screen and (max-width: $mobile) and (orientation: $orientation) { @content; }
+        }
+        @else {
+			@media only screen and (max-width: $mobile) { @content; }
+        }
+    }
+    // tablet sets
+    @if $device == tablet {
+		@if ($orientation == landscape) or ($orientation == portrait) {		
+			@media only screen and (min-width: $mobile) and (max-width: $desktop) and (orientation: $orientation) { @content;}
+        }
+        @else {
+			@media only screen and (min-width: $mobile) and (max-width: $desktop) { @content; }
+        }
+    }
+    // desktop sets
+    @if $device == desktop {
+        @media only screen and (min-width: $desktop) {
+          @content;
+        }
+    }
+}

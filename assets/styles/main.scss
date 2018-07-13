@@ -1,0 +1,21 @@
+@import "vars";
+@import "colors";
+@import "functions";
+@import "keyframes";
+@import "fonts";
+@import "reset";
+
+body {
+    background-size: cover;
+    background-color: $black;
+    background-attachment: fixed;
+    background-image: url('../images/bg.jpg');
+    background-position: top center;
+
+    // -webkit-mask-image: linear-gradient(to bottom, transparent 14%, black 35%, black 67%, transparent 83%);
+}
+
+@import 'components/App';
+@import 'components/Map';
+
+
