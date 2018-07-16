@@ -4,7 +4,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
 
-        this.sytate = {
+        this.state = {
             screen: {
                 landscape: window.innerWidth >= window.innerHeight,
                 width: window.innerWidth,
