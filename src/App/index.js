@@ -2,7 +2,7 @@ import Path from 'path';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'App/services/LoadImages';
+import 'App/services/LoadAssets';
 
 import 'Styles/main.scss';
 import App from 'App/templates/App'
