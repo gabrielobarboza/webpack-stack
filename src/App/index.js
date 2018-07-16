@@ -1,4 +1,3 @@
-import Path from 'path';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore } from 'redux'
@@ -8,7 +7,7 @@ import promise from 'redux-promise'
 import multi from 'redux-multi'
 import thunk from 'redux-thunk'
 
-import 'App/services/LoadImages';
+import 'App/services/LoadAssets';
 
 import 'Styles/main.scss';
 import App from 'App/templates/App'
