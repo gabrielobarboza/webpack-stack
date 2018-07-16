@@ -1,5 +1,3 @@
-import { fabric } from "fabric";
-
 const SCREEN_INITIAL_STATE = { landscape: window.innerWidth >= window.innerHeight, width: window.innerWidth, height: window.innerHeight }
 
 export default (state = SCREEN_INITIAL_STATE, action) => {
