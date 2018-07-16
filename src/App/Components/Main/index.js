@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
-import { setScreen } from 'App/Reducers/Screen/screenActions';
-
 class Main extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            screen: {
+                landscape: window.innerWidth >= window.innerHeight,
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+        }
         this.updateDimensions = this.updateDimensions.bind(this);
     }
 
-    componentWillMount() {
-        console.log(this.props.screen)
+    componentWillMount() {        
         window.addEventListener("resize", this.updateDimensions, false);        
     }
 
@@ -20,17 +22,22 @@ class Main extends Component {
     }
 
     updateDimensions () {
-        this.props.setScreen({
+        const screen = {
             landscape: window.innerWidth >= window.innerHeight,
             width: window.innerWidth,
             height: window.innerHeight
+        }
+
+        this.setState({
+            ...state,
+            screen
         })
         this.forceUpdate()
     }
     
     render() {
         return (
-            <div id="Main" hidden={!this.props.screen.landscape}>
+            <div id="Main">
                 <div className="wrapper">
                     <div className="overlay"></div>
                 </div>
@@ -39,8 +46,5 @@ class Main extends Component {
     }
 }
 
-const StateToProps = state => ({ ...state })
-const DispatchToProps = dispatch => 
-    bindActionCreators({ setScreen }, dispatch)
-export default connect(StateToProps, DispatchToProps)(Main)
+export default Main
 
